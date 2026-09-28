@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeliveryAI | Food Delivery Predictor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="orb a"></div><div class="orb b"></div>
+<main>
+<nav><div class="brand"><b>🚚</b><span><strong>DeliveryAI</strong><small>ML Prediction System</small></span></div>
+<a href="https://food-deliverytime-prediction-7gph.onrender.com/docs" target="_blank">API Docs ↗</a></nav>
+<section class="hero"><div class="intro">
+<small class="eyebrow">MACHINE LEARNING • REGRESSION</small>
+<h1>Predict your <em>delivery time.</em></h1>
+<p>Enter delivery conditions and get an estimated delivery time powered by your trained Linear Regression model.</p>
+<div class="stats"><div><b>0.826</b><small>R² Score</small></div><div><b>5.899</b><small>MAE (min)</small></div><div><b>ML</b><small>Regression</small></div></div>
+</div>
+<div class="card"><header><div><small>PREDICTION INPUT</small><h2>Delivery details</h2></div><i></i></header>
+<form id="form">
+<div class="row"><label>Distance<input id="distance" type="number" min=".1" step=".1" value="8"></label><label>Preparation time<input id="preparation_time" type="number" min="1" value="20"></label></div>
+<div class="row"><label>Weather<select id="weather"><option>Clear</option><option>Foggy</option><option>Rainy</option><option>Snowy</option><option>Windy</option></select></label>
+<label>Traffic level<select id="traffic_level"><option>Low</option><option selected>Medium</option><option>High</option></select></label></div>
+<div class="row"><label>Time of day<select id="time_of_day"><option>Morning</option><option>Afternoon</option><option selected>Evening</option><option>Night</option></select></label>
+<label>Vehicle type<select id="vehicle_type"><option selected>Bike</option><option>Scooter</option><option>Car</option></select></label></div>
+<label>Courier experience<input id="courier_experience" type="number" min="0" max="30" step=".1" value="2"></label>
+<button id="btn">Predict Delivery Time <span>→</span></button>
+</form>
+<div id="error"></div>
+<div class="result"><small>ESTIMATED DELIVERY TIME</small><div><strong id="prediction">--</strong> <span>minutes</span></div><hr><p id="msg">Your prediction will appear here.</p></div>
+</div></section>
+<footer><span>Built with FastAPI + Scikit-learn</span><span>Food Delivery Time Prediction</span></footer>
+</main><script src="script.js"></script></body></html>
